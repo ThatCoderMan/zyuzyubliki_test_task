@@ -8,6 +8,7 @@
 - Python Telegram Bot
 - AIOHTTP
 - LXML
+- Pandas
 - SQLAlchemy (async)
 - Pydantic
 - Alembic
