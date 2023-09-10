@@ -83,11 +83,11 @@ async def get_file(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 session.add(parsing_data)
                 await session.commit()
                 table_new.add_row([val[:128] for val in value])
-                logging.info(f'{parsing_data} добавлен в БД')
+                logging.info(f'{value[0]} добавлен в БД')
             except IntegrityError:
                 await session.rollback()
                 table_exists.add_row([val[:128] for val in value])
-                logging.info(f'{parsing_data} уже есть в БД')
+                logging.info(f'{value[0]} уже есть в БД')
             except ValueError as exception:
                 await session.rollback()
                 table_not_valid.add_row([val[:128] for val in value])
